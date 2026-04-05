@@ -196,7 +196,7 @@ def manage_subject(request):
 
 
 def edit_staff(request, staff_id):
-    staff = get_object_or_404(Staff, id=staff_id)
+    staff = get_object_or_404(Staff, admin_id=staff_id)
     form = StaffForm(request.POST or None, instance=staff)
     context = {
         'form': form,
@@ -208,7 +208,6 @@ def edit_staff(request, staff_id):
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
             address = form.cleaned_data.get('address')
-            username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
             gender = form.cleaned_data.get('gender')
             password = form.cleaned_data.get('password') or None
@@ -216,7 +215,6 @@ def edit_staff(request, staff_id):
             passport = request.FILES.get('profile_pic') or None
             try:
                 user = CustomUser.objects.get(id=staff.admin.id)
-                user.username = username
                 user.email = email
                 if password != None:
                     user.set_password(password)
@@ -240,12 +238,12 @@ def edit_staff(request, staff_id):
             messages.error(request, "Please fil form properly")
     else:
         user = CustomUser.objects.get(id=staff_id)
-        staff = Staff.objects.get(id=user.id)
+        staff = Staff.objects.get(admin=user)
         return render(request, "hod_template/edit_staff_template.html", context)
 
 
 def edit_student(request, student_id):
-    student = get_object_or_404(Student, id=student_id)
+    student = get_object_or_404(Student, admin_id=student_id)
     form = StudentForm(request.POST or None, instance=student)
     context = {
         'form': form,
@@ -257,7 +255,6 @@ def edit_student(request, student_id):
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
             address = form.cleaned_data.get('address')
-            username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
             gender = form.cleaned_data.get('gender')
             password = form.cleaned_data.get('password') or None
@@ -271,7 +268,6 @@ def edit_student(request, student_id):
                     filename = fs.save(passport.name, passport)
                     passport_url = fs.url(filename)
                     user.profile_pic = passport_url
-                user.username = username
                 user.email = email
                 if password != None:
                     user.set_password(password)

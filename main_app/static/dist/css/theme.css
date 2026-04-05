@@ -1,0 +1,142 @@
+/* Theme Overrides for EduNexus: Smart Student Management System */
+
+:root {
+  --background: #f8fafc;
+  --sidebar-bg: #1e293b;
+  --sidebar-active: #2563eb;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #10b981;
+  --text-main: #0f172a;
+  --card-bg: #ffffff;
+  --border-light: #e2e8f0;
+}
+
+body {
+    background-color: var(--background) !important;
+    color: var(--text-main) !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+.content-wrapper, .main-footer {
+    background-color: var(--background) !important;
+}
+
+/* Sidebar Styling */
+.main-sidebar {
+    background-color: var(--sidebar-bg) !important;
+}
+
+.nav-sidebar .nav-link {
+    color: #cbd5e1 !important;
+}
+
+.nav-sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.nav-sidebar .nav-link.active {
+    background-color: var(--sidebar-active) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4) !important;
+}
+
+.brand-link {
+    background-color: var(--sidebar-bg) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg) !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: 1.25rem !important;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1.25rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Success/Accent Styling */
+.btn-success, .bg-success {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+
+.badge-success {
+    background-color: var(--accent) !important;
+}
+
+/* Table Styling */
+.table {
+    background-color: white !important;
+}
+
+.table thead th {
+    background-color: #f1f5f9 !important;
+    border-bottom: 2px solid var(--border-light) !important;
+    color: #475569 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.025em;
+}
+
+.table td, .table th {
+    border-top: 1px solid var(--border-light) !important;
+    padding: 1rem !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #eff6ff !important;
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: 8px !important;
+    border: 1px solid var(--border-light) !important;
+    padding: 0.6rem 1rem !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Custom Small Boxes (AdminLTE) */
+.small-box {
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.small-box.bg-info { background-color: #3b82f6 !important; }
+.small-box.bg-warning { background-color: #f59e0b !important; }
+.small-box.bg-danger { background-color: #ef4444 !important; }
+.small-box.bg-success { background-color: var(--accent) !important; }
+
+/* Navbar */
+.main-header {
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
