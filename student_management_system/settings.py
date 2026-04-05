@@ -162,3 +162,4 @@ EMAIL_USE_TLS = True
 
 # Final Production Cleanup
 # No extra DB overrides needed as dj_database_url is used above.
+WHITENOISE_MANIFEST_STRICT = False
